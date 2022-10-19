@@ -5,9 +5,13 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Home from "./components/qr-attendance/pages/Home";
 import Reports from "./components/qr-attendance/pages/Reports";
 import Products from "./components/qr-attendance/pages/Products";
+import Login from "./components/qr-attendance/login/Login";
 
 function App() {
-  return (
+  const isLogged = false;
+  return isLogged ? (
+    <Login></Login>
+  ) : (
     <>
       <BrowserRouter>
         <Navbar />

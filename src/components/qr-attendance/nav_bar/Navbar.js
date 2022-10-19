@@ -26,9 +26,11 @@ function Navbar() {
           {/* Title */}
           <div className="mx-auto flex justify-center items-center gap-5 align-baseline">
             <img src={cse_logo} alt="" className=" rounded-full w-11" />
-            <h1 className=" text-white text-xl font-bold ">
-              QUẢN LÝ ĐIỂM DANH THÔNG MINH
-            </h1>
+            <Link to="/">
+              <h1 className=" text-white text-xl font-bold ">
+                QUẢN LÝ ĐIỂM DANH THÔNG MINH
+              </h1>
+            </Link>
             <img src={tlu_logo} alt="" className=" rounded-full w-11 " />
           </div>
 
