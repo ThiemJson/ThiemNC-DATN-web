@@ -1,5 +1,8 @@
 import React from "react";
+import { useEffect } from "react";
+import { useState } from "react";
 import styled from "styled-components";
+import { getRooms } from "../services/RoomService";
 
 const THeadHeaderStyle = styled.th`
   padding: 8px;
@@ -17,6 +20,18 @@ const TRowHeaderStyle = styled.th`
 `;
 
 const Rooms = () => {
+  const [rooms, setRooms] = useState([]);
+
+  useEffect(() => {
+    getRooms()
+      .then((result) => {
+        console.log("====+>", result);
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  }, []);
+
   return (
     <div className="w-[80%] h-screen m-10 bg-white rounded-lg shadow-xl mx-auto p-8 flex flex-col ">
       {/* Label */}
