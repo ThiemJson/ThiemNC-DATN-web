@@ -6,3 +6,4 @@ export const API_PATH = `${DOMAIN}/${API_PREFIX}`;
 // API Route
 export const ROUTE_ROOMS = "room";
 export const ROUTE_SUBJECTs = "subjects";
+export const ROUTE_FACULTY = "faculty";

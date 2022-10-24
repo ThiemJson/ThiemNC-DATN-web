@@ -25,7 +25,7 @@ const Rooms = () => {
   useEffect(() => {
     getRooms()
       .then((result) => {
-        console.log("====+>", result);
+        setRooms(result.data);
       })
       .catch((error) => {
         console.log(error);
@@ -58,19 +58,19 @@ const Rooms = () => {
           </tr>
         </thead>
         <tbody>
-          {[1, 2, 3, 4, 5].map((item, index) => (
-            <tr>
+          {rooms.slice(0, 10).map(({ ID, MaPH, TenPH, Diachi }, index) => (
+            <tr key={index}>
               <TRowHeaderStyle className="border border-gray-200">
-                {index + 1}
+                {ID}
               </TRowHeaderStyle>
               <TRowHeaderStyle className="border border-gray-200">
-                C1-103
+                {MaPH}
               </TRowHeaderStyle>
               <TRowHeaderStyle className="border border-gray-200">
-                C1-103
+                {TenPH}
               </TRowHeaderStyle>
               <TRowHeaderStyle className="border border-gray-200">
-                31.312.3123.3123 - 3123.312.312.312
+                {Diachi}
               </TRowHeaderStyle>
             </tr>
           ))}

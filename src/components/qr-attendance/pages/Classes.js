@@ -72,15 +72,21 @@ const Classes = () => {
           {/* Subjects */}
           <div className="w-[40%] h-full ">
             <BodyTitle>Môn học</BodyTitle>
-            {[1, 2, 3, 4, 4, 5, 6].map((item) => {
-              return item % 2 == 0 ? (
-                <div className="w-full h-[40px] flex justify-start items-center p-2 align-baseline">
+            {[1, 2, 3, 4, 4, 5, 6].map((item, index) => {
+              return item % 2 === 0 ? (
+                <div
+                  className="w-full h-[40px] flex justify-start items-center p-2 align-baseline"
+                  key={index}
+                >
                   <p className=" text-sm text-[#367cb8] font-semibold ">
                     An toàn và bảo mật thông tin
                   </p>
                 </div>
               ) : (
-                <div className="w-full h-[40px] bg-[#00c0ef] flex justify-start items-center p-2 align-baseline">
+                <div
+                  className="w-full h-[40px] bg-[#00c0ef] flex justify-start items-center p-2 align-baseline"
+                  key={index}
+                >
                   <p className=" text-sm text-white font-semibold underline ">
                     An toàn và bảo mật thông tin
                   </p>
@@ -91,8 +97,8 @@ const Classes = () => {
           {/* Classes */}
           <div className="w-full h-full">
             <BodyTitle>Lớp học phần</BodyTitle>
-            {[1, 2].map((item) => (
-              <div className=" w-full mb-2 border border-gray-200">
+            {[1, 2].map((item, index) => (
+              <div className=" w-full mb-2 border border-gray-200" key={index}>
                 {/* Class name */}
                 <div className=" p-2 flex justify-between items-center bg-[#636363] text-white font-semibold text-sm">
                   {/* Name */}
@@ -121,8 +127,11 @@ const Classes = () => {
                     </div>
                   </div>
                   {/* Body */}
-                  {[1, 2].map((item) => (
-                    <div className="w-full flex justify-center items-center p-1">
+                  {[1, 2].map((item, index) => (
+                    <div
+                      className="w-full flex justify-center items-center p-1"
+                      key={index}
+                    >
                       <div className=" w-[35%] ">
                         <ContentSpanHeaderStyle>
                           29/08/2022 - 23/10/2022

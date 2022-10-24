@@ -1,5 +1,8 @@
 import React from "react";
+import { useEffect } from "react";
+import { useState } from "react";
 import styled from "styled-components";
+import { getSubjects } from "../services/SubjectService";
 
 const THeadHeaderStyle = styled.th`
   padding: 8px;
@@ -17,6 +20,16 @@ const TRowHeaderStyle = styled.th`
 `;
 
 const Subjects = () => {
+  const [subjects, setSubject] = useState([]);
+
+  useEffect(() => {
+    getSubjects()
+      .then((result) => {
+        setSubject(result.data);
+      })
+      .catch((error) => {});
+  }, []);
+
   return (
     <div className="w-[80%] h-screen m-10 bg-white rounded-lg shadow-xl mx-auto p-8 flex flex-col ">
       {/* Label */}
@@ -42,9 +55,6 @@ const Subjects = () => {
               STT
             </THeadHeaderStyle>
             <THeadHeaderStyle className="border border-gray-200">
-              Khối kiến thức
-            </THeadHeaderStyle>
-            <THeadHeaderStyle className="border border-gray-200">
               Mã học phần
             </THeadHeaderStyle>
             <THeadHeaderStyle className="border border-gray-200">
@@ -59,28 +69,27 @@ const Subjects = () => {
           </tr>
         </thead>
         <tbody>
-          {[1, 2, 3, 4, 5].map((item, index) => (
-            <tr>
-              <TRowHeaderStyle className="border border-gray-200">
-                {index + 1}
-              </TRowHeaderStyle>
-              <TRowHeaderStyle className="border border-gray-200">
-                Giáo dục quốc phòng an ninh
-              </TRowHeaderStyle>
-              <TRowHeaderStyle className="border border-gray-200">
-                GDQP221
-              </TRowHeaderStyle>
-              <TRowHeaderStyle className="border border-gray-200">
-                Công tác quốc phòng an ninh
-              </TRowHeaderStyle>
-              <TRowHeaderStyle className="border border-gray-200">
-                1
-              </TRowHeaderStyle>
-              <TRowHeaderStyle className="border border-gray-200">
-                3
-              </TRowHeaderStyle>
-            </tr>
-          ))}
+          {subjects
+            .slice(0, 10)
+            .map(({ ID, Hocky, MaMH, Sotinchi, TenMonhoc }, index) => (
+              <tr key={index}>
+                <TRowHeaderStyle className="border border-gray-200">
+                  {ID}
+                </TRowHeaderStyle>
+                <TRowHeaderStyle className="border border-gray-200">
+                  {MaMH}
+                </TRowHeaderStyle>
+                <TRowHeaderStyle className="border border-gray-200">
+                  {TenMonhoc}
+                </TRowHeaderStyle>
+                <TRowHeaderStyle className="border border-gray-200">
+                  {Sotinchi}
+                </TRowHeaderStyle>
+                <TRowHeaderStyle className="border border-gray-200">
+                  {Hocky}
+                </TRowHeaderStyle>
+              </tr>
+            ))}
         </tbody>
       </table>
     </div>

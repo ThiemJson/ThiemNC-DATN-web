@@ -1,5 +1,8 @@
 import React from "react";
+import { useEffect } from "react";
+import { useState } from "react";
 import styled from "styled-components";
+import { getFaculty } from "../services/FacultiesService";
 
 const THeadHeaderStyle = styled.th`
   padding: 8px;
@@ -15,7 +18,18 @@ const TRowHeaderStyle = styled.th`
   font-size: 12px;
   color: black;
 `;
+
 const Faculties = () => {
+  const [faculties, setFaculties] = useState([]);
+
+  useEffect(() => {
+    getFaculty()
+      .then((result) => {
+        setFaculties(result.data);
+      })
+      .catch((error) => {});
+  }, []);
+
   return (
     <div className="w-[80%] h-screen m-10 bg-white rounded-lg shadow-xl mx-auto p-8 flex flex-col ">
       {/* Label */}
@@ -39,16 +53,16 @@ const Faculties = () => {
           </tr>
         </thead>
         <tbody>
-          {[1, 2, 3, 4, 5].map((item, index) => (
-            <tr>
+          {faculties.slice(0, 10).map(({ ID, MaKhoa, TenKhoa }, index) => (
+            <tr key={index}>
               <TRowHeaderStyle className="border border-gray-200">
-                {index + 1}
+                {ID}
               </TRowHeaderStyle>
               <TRowHeaderStyle className="border border-gray-200">
-                TLA106
+                {MaKhoa}
               </TRowHeaderStyle>
               <TRowHeaderStyle className="border border-gray-200">
-                Công nghệ thông tin
+                {TenKhoa}
               </TRowHeaderStyle>
             </tr>
           ))}

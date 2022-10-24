@@ -1,9 +1,9 @@
 import axios from "axios";
-import { API_PATH, ROUTE_SUBJECTs } from "../Const";
+import { API_PATH, ROUTE_FACULTY } from "../Const";
 
-export const getSubjects = () => {
+export const getFaculty = () => {
   return new Promise((resolve, reject) => {
-    const url = `${API_PATH}/${ROUTE_SUBJECTs}`;
+    const url = `${API_PATH}/${ROUTE_FACULTY}`;
     axios
       .get(url)
       .then((result) => resolve(result.data))
