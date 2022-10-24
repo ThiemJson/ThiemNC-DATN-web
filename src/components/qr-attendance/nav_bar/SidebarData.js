@@ -48,7 +48,7 @@ export const SidebarData = [
     cName: "nav-text",
   },
   {
-    title: "Khoa",
+    title: "Ngành học",
     path: "/faculties",
     icon: <FaIcons.FaEnvelopeOpenText />,
     cName: "nav-text",

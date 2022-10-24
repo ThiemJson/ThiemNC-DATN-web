@@ -25,7 +25,7 @@ const ContentSpanHeaderStyle = styled.span`
 
 const Classes = () => {
   return (
-    <div className="w-[80%] h-screen m-10 bg-white rounded-lg shadow-xl mx-auto p-8 flex flex-col ">
+    <div className="w-[80%]  m-10 bg-white rounded-lg shadow-xl mx-auto p-8 flex flex-col ">
       {/* Select */}
       <div className=" w-full flex justify-center items-center mb-3 gap-4 ">
         <select className=" px-3 py-2 w-full max-w-[300px] border text-base font-bold rounded-[inherit] bg-gray-100 ">

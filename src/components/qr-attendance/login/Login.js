@@ -1,7 +1,7 @@
 import React from "react";
 import tlu_60_logo from "../../../images/tlu-60-logo.png";
 
-const Login = () => {
+const Login = ({ setLogged }) => {
   return (
     <div className=" bg-[#dde3ec] w-screen h-screen flex justify-center items-center">
       <div className=" bg-white w-[800px] h-[480px] rounded-lg shadow-lg flex justify-center items-center overflow-hidden">
@@ -38,6 +38,9 @@ const Login = () => {
               <button
                 type="submit"
                 className=" px-3 py-2 bg-black text-white text-base font-bold uppercase mt-10 rounded-md "
+                onClick={() => {
+                  setLogged(true);
+                }}
               >
                 Đăng nhập
               </button>

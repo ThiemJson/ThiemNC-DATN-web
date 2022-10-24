@@ -12,15 +12,20 @@ import Lecture from "./components/qr-attendance/pages/Lecture";
 import Faculties from "./components/qr-attendance/pages/Faculties";
 import Classes from "./components/qr-attendance/pages/Classes";
 import Attendance from "./components/qr-attendance/pages/Attendance";
+import * as FaIcons from "react-icons/fa";
+import { useState } from "react";
 
 function App() {
-  const isLogged = false;
-  return isLogged ? (
-    <Login></Login>
+  const [logged, setLogged] = useState(false);
+  const moveToTop = () => {
+    window.scrollTo(0, 0);
+  };
+  return logged === false ? (
+    <Login setLogged={setLogged}></Login>
   ) : (
     <>
       <BrowserRouter>
-        <Navbar />
+        <Navbar setLogged={setLogged} />
         <Routes>
           <Route path="/" element={<Home />} exact />
           <Route path="/students" element={<Students />} />
@@ -37,6 +42,11 @@ function App() {
             2022 © CSE-TLU All rights reserved
           </h1>
         </div>
+        <FaIcons.FaArrowCircleUp
+          className=" w-12 h-12 fixed bottom-16 right-8 hover:w-14 hover:h-14 "
+          color="#2b3643"
+          onClick={moveToTop}
+        />
       </BrowserRouter>
     </>
   );
