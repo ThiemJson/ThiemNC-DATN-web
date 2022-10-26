@@ -35,12 +35,12 @@ const ContentSpanTextStyle = styled.span`
 `;
 
 const Students = () => {
-  const [subjects, setSubject] = useState([]);
+  const [students, setStudent] = useState([]);
 
   useEffect(() => {
     getStudents()
       .then((result) => {
-        setSubject(result.data);
+        setStudent(result.data);
       })
       .catch((error) => {});
   }, []);
@@ -120,7 +120,7 @@ const Students = () => {
             </tr>
           </thead>
           <tbody>
-            {subjects.map(
+            {students.map(
               (
                 {
                   ID,
@@ -143,7 +143,7 @@ const Students = () => {
                     <TRowHeaderStyle className="border border-gray-200">
                       {MaSV}
                     </TRowHeaderStyle>
-                    <TRowHeaderStyle className="border border-gray-200">
+                    <TRowHeaderStyle className="border border-gray-200 text-left">
                       {Hoten}
                     </TRowHeaderStyle>
                     <TRowHeaderStyle className="border border-gray-200 text-left">
