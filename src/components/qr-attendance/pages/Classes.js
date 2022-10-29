@@ -2,7 +2,10 @@ import React from "react";
 import styled from "styled-components";
 import * as MdIcons from "react-icons/md";
 import * as IoIcons from "react-icons/io5";
-import { SidebarData } from "../nav_bar/SidebarData";
+import { useState } from "react";
+import { useEffect } from "react";
+import { getSubjects } from "../services/SubjectService";
+import { getClass } from "../services/ClassesService";
 
 const BodyTitle = styled.h1`
   font-weight: bold;
@@ -24,8 +27,30 @@ const ContentSpanHeaderStyle = styled.span`
 `;
 
 const Classes = () => {
+  const [subjects, setSubjects] = useState([]);
+  const [classes, setClasses] = useState([]);
+  const [selectedSubject, setSelectedSubject] = useState({});
+
+  useEffect(() => {
+    getClass()
+      .then((result) => {
+        setClasses(result.data);
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+
+    getSubjects()
+      .then((result) => {
+        setSubjects(result.data);
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  }, []);
+
   return (
-    <div className="w-[80%]  m-10 bg-white rounded-lg shadow-xl mx-auto p-8 flex flex-col ">
+    <div className="w-[80%] m-10 bg-white rounded-lg shadow-xl mx-auto p-8 flex flex-col ">
       {/* Select */}
       <div className=" w-full flex justify-center items-center mb-3 gap-4 ">
         <select className=" px-3 py-2 w-full max-w-[300px] border text-base font-bold rounded-[inherit] bg-gray-100 ">
@@ -72,14 +97,14 @@ const Classes = () => {
           {/* Subjects */}
           <div className="w-[40%] h-full ">
             <BodyTitle>Môn học</BodyTitle>
-            {[1, 2, 3, 4, 4, 5, 6].map((item, index) => {
-              return item % 2 === 0 ? (
+            {subjects.map(({ TenMonhoc }, index) => {
+              return true ? (
                 <div
                   className="w-full h-[40px] flex justify-start items-center p-2 align-baseline"
                   key={index}
                 >
                   <p className=" text-sm text-[#367cb8] font-semibold ">
-                    An toàn và bảo mật thông tin
+                    {TenMonhoc}
                   </p>
                 </div>
               ) : (
@@ -88,7 +113,7 @@ const Classes = () => {
                   key={index}
                 >
                   <p className=" text-sm text-white font-semibold underline ">
-                    An toàn và bảo mật thông tin
+                    {TenMonhoc}
                   </p>
                 </div>
               );

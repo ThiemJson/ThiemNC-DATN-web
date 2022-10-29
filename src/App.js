@@ -14,16 +14,24 @@ import Classes from "./components/qr-attendance/pages/Classes";
 import Attendance from "./components/qr-attendance/pages/Attendance";
 import * as FaIcons from "react-icons/fa";
 import { useState } from "react";
+import { LoadingContext } from "./context/counter_context/CounterContext";
+import Loading from "./components/qr-attendance/components/Loading";
 
 function App() {
+  const { isHidden, setHidden } = React.useContext(LoadingContext);
   const [logged, setLogged] = useState(false);
   const moveToTop = () => {
     window.scrollTo(0, 0);
   };
+
   return logged === false ? (
-    <Login setLogged={setLogged}></Login>
+    <div>
+      {isHidden && <Loading></Loading>}
+      <Login setLogged={setLogged}></Login>
+    </div>
   ) : (
     <>
+      {isHidden && <Loading></Loading>}
       <BrowserRouter>
         <Navbar setLogged={setLogged} />
         <Routes>

@@ -10,3 +10,4 @@ export const ROUTE_SUBJECTs = "subjects";
 export const ROUTE_FACULTY = "faculty";
 export const ROUTE_STUDENT = "students";
 export const ROUTE_LECTURE = "lecture";
+export const ROUTE_CLASSES = "class";

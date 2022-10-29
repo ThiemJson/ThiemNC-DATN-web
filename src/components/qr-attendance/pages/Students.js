@@ -3,6 +3,7 @@ import { useEffect } from "react";
 import styled from "styled-components";
 import { getStudents } from "../services/StudentService";
 import MD5 from "crypto-js/md5";
+import { FilterBox } from "../components/FilterBox";
 
 const THeadHeaderStyle = styled.th`
   padding: 8px;
@@ -36,11 +37,18 @@ const ContentSpanTextStyle = styled.span`
 
 const Students = () => {
   const [students, setStudent] = useState([]);
+  const [studentsFiltered, setStudentsFiltered] = useState([]);
+
+  const validator = ({ MaGV, Hoten }, text) => {
+    const inputString = `${MaGV}${Hoten}`;
+    return inputString.includes(text);
+  };
 
   useEffect(() => {
     getStudents()
       .then((result) => {
         setStudent(result.data);
+        setStudentsFiltered(result.data);
       })
       .catch((error) => {});
   }, []);
@@ -84,16 +92,24 @@ const Students = () => {
         {/* Label */}
         <div className="flex flex-col gap-3 w-full">
           <p className="text-sm font-bold w-full">Danh sách sinh viên</p>
-          <select
-            name=""
-            id=""
-            className="px-3 py-2 w-full max-w-[300px] border text-base font-bold rounded-[inherit] bg-gray-100 "
-          >
-            <option value="cntt">Công nghệ thông tin</option>
-            <option value="httt">Hệ thống thông tin</option>
-            <option value="ktpm">Kỹ thuật phần mềm</option>
-            <option value="anm">An ninh mạng</option>
-          </select>
+          <div className="w-full flex justify-between ">
+            <select
+              name=""
+              id=""
+              className="px-3 py-2 w-full max-w-[300px] border text-base font-bold rounded-[inherit] bg-gray-100 "
+            >
+              <option value="cntt">Công nghệ thông tin</option>
+              <option value="httt">Hệ thống thông tin</option>
+              <option value="ktpm">Kỹ thuật phần mềm</option>
+              <option value="anm">An ninh mạng</option>
+            </select>
+            <FilterBox
+              className="w-[200px] h-full "
+              items={students}
+              validator={validator}
+              dispatch={setStudentsFiltered}
+            ></FilterBox>
+          </div>
         </div>
         {/* table */}
         <table className="table-auto border-collapse border border-gray-200 mt-5 ">
@@ -120,7 +136,7 @@ const Students = () => {
             </tr>
           </thead>
           <tbody>
-            {students.map(
+            {studentsFiltered.map(
               (
                 {
                   ID,

@@ -36,11 +36,18 @@ const ContentSpanTextStyle = styled.span`
 `;
 const Lecture = () => {
   const [lectures, setLecture] = useState([]);
+  const [lecturesFiltered, setLecturesFiltered] = useState([]);
+
+  const validator = ({ MaGV, Hoten }, text) => {
+    const inputString = `${MaGV}${Hoten}`;
+    return inputString.includes(text);
+  };
 
   useEffect(() => {
     getLecture()
       .then((result) => {
         setLecture(result.data);
+        setLecturesFiltered(result.data);
       })
       .catch((error) => {});
   }, []);
@@ -68,13 +75,17 @@ const Lecture = () => {
         <div className=" w-[50%] h-full flex justify-center items-center ">
           {/* title */}
           <div className=" w-[30%] h-full flex flex-col ">
-            <ContentSpanTextStyle>Ngày sinh</ContentSpanTextStyle>
+            {/* <ContentSpanTextStyle>Ngày sinh</ContentSpanTextStyle>
+            <ContentSpanTextStyle>das </ContentSpanTextStyle>
+            <ContentSpanTextStyle> das</ContentSpanTextStyle> */}
             {/* <ContentSpanTextStyle>Lớp</ContentSpanTextStyle>
             <ContentSpanTextStyle>Hệ đào tạo</ContentSpanTextStyle> */}
           </div>
           {/* content */}
           <div className=" w-[70%] h-full flex flex-col ">
-            <SpanTextStyle>20/02/2000</SpanTextStyle>
+            {/* <SpanTextStyle>20/02/2000</SpanTextStyle>
+            <SpanTextStyle>asd</SpanTextStyle>
+            <SpanTextStyle> das</SpanTextStyle> */}
             {/* <SpanTextStyle>60TH3</SpanTextStyle>
             <SpanTextStyle>Đào tạo chính quy</SpanTextStyle> */}
           </div>
@@ -97,7 +108,12 @@ const Lecture = () => {
               <option value="ktpm">Kỹ thuật phần mềm</option>
               <option value="anm">An ninh mạng</option>
             </select>
-            <FilterBox className="w-[200px] h-full "></FilterBox>
+            <FilterBox
+              className="w-[200px] h-full "
+              items={lectures}
+              validator={validator}
+              dispatch={setLecturesFiltered}
+            ></FilterBox>
           </div>
         </div>
         {/* table */}
@@ -125,7 +141,7 @@ const Lecture = () => {
             </tr>
           </thead>
           <tbody>
-            {lectures.map(
+            {lecturesFiltered.map(
               (
                 {
                   ID,
