@@ -42,7 +42,7 @@ const Login = ({ setLogged }) => {
                 type="submit"
                 className=" px-3 py-2 bg-black text-white text-base font-bold uppercase mt-10 rounded-md "
                 onClick={() => {
-                  setHidden(false);
+                  setHidden(true);
                   setLogged(true);
                 }}
               >

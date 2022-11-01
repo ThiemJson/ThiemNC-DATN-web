@@ -18,7 +18,7 @@ import { LoadingContext } from "./context/counter_context/CounterContext";
 import Loading from "./components/qr-attendance/components/Loading";
 
 function App() {
-  const { isHidden, setHidden } = React.useContext(LoadingContext);
+  const { isHidden } = React.useContext(LoadingContext);
   const [logged, setLogged] = useState(false);
   const moveToTop = () => {
     window.scrollTo(0, 0);
@@ -26,12 +26,12 @@ function App() {
 
   return logged === false ? (
     <div>
-      {isHidden && <Loading></Loading>}
+      {/* {!isHidden && <Loading></Loading>} */}
       <Login setLogged={setLogged}></Login>
     </div>
   ) : (
     <>
-      {isHidden && <Loading></Loading>}
+      {/* {!isHidden && <Loading></Loading>} */}
       <BrowserRouter>
         <Navbar setLogged={setLogged} />
         <Routes>

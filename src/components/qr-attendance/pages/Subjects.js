@@ -2,6 +2,7 @@ import React from "react";
 import { useEffect } from "react";
 import { useState } from "react";
 import styled from "styled-components";
+import { FilterBox } from "../components/FilterBox";
 import { getSubjects } from "../services/SubjectService";
 
 const THeadHeaderStyle = styled.th`
@@ -21,11 +22,17 @@ const TRowHeaderStyle = styled.th`
 
 const Subjects = () => {
   const [subjects, setSubject] = useState([]);
+  const [subjectsFiltered, setSubjectsFiltered] = useState([]);
+  const validator = ({ MaMH, TenMonhoc }, text) => {
+    const inputString = `${MaMH}${TenMonhoc}`.toLowerCase();
+    return inputString.includes(text.toLowerCase());
+  };
 
   useEffect(() => {
     getSubjects()
       .then((result) => {
         setSubject(result.data);
+        setSubjectsFiltered(result.data);
       })
       .catch((error) => {});
   }, []);
@@ -35,16 +42,24 @@ const Subjects = () => {
       {/* Label */}
       <div className="flex flex-col gap-3 w-full">
         <p className="text-sm font-bold w-full">Chương trình đào tạo</p>
-        <select
-          name=""
-          id=""
-          className="px-3 py-2 w-full max-w-[300px] border text-base font-bold rounded-[inherit] bg-gray-100 "
-        >
-          <option value="cntt">Công nghệ thông tin</option>
-          <option value="httt">Hệ thống thông tin</option>
-          <option value="ktpm">Kỹ thuật phần mềm</option>
-          <option value="anm">An ninh mạng</option>
-        </select>
+        <div className="w-full flex justify-between ">
+          <select
+            name=""
+            id=""
+            className="px-3 py-2 w-full max-w-[300px] border text-base font-bold rounded-[inherit] bg-gray-100 "
+          >
+            <option value="cntt">Công nghệ thông tin</option>
+            <option value="httt">Hệ thống thông tin</option>
+            <option value="ktpm">Kỹ thuật phần mềm</option>
+            <option value="anm">An ninh mạng</option>
+          </select>
+          <FilterBox
+            className="w-[200px] h-full "
+            items={subjects}
+            validator={validator}
+            dispatch={setSubjectsFiltered}
+          ></FilterBox>
+        </div>
       </div>
 
       {/* table */}
@@ -69,25 +84,27 @@ const Subjects = () => {
           </tr>
         </thead>
         <tbody>
-          {subjects.map(({ ID, Hocky, MaMH, Sotinchi, TenMonhoc }, index) => (
-            <tr key={index}>
-              <TRowHeaderStyle className="border border-gray-200">
-                {ID}
-              </TRowHeaderStyle>
-              <TRowHeaderStyle className="border border-gray-200">
-                {MaMH}
-              </TRowHeaderStyle>
-              <TRowHeaderStyle className="border border-gray-200 text-left">
-                {TenMonhoc}
-              </TRowHeaderStyle>
-              <TRowHeaderStyle className="border border-gray-200">
-                {Sotinchi}
-              </TRowHeaderStyle>
-              <TRowHeaderStyle className="border border-gray-200">
-                {Hocky}
-              </TRowHeaderStyle>
-            </tr>
-          ))}
+          {subjectsFiltered.map(
+            ({ ID, Hocky, MaMH, Sotinchi, TenMonhoc }, index) => (
+              <tr key={index}>
+                <TRowHeaderStyle className="border border-gray-200">
+                  {ID}
+                </TRowHeaderStyle>
+                <TRowHeaderStyle className="border border-gray-200">
+                  {MaMH}
+                </TRowHeaderStyle>
+                <TRowHeaderStyle className="border border-gray-200 text-left">
+                  {TenMonhoc}
+                </TRowHeaderStyle>
+                <TRowHeaderStyle className="border border-gray-200">
+                  {Sotinchi}
+                </TRowHeaderStyle>
+                <TRowHeaderStyle className="border border-gray-200">
+                  {Hocky}
+                </TRowHeaderStyle>
+              </tr>
+            )
+          )}
         </tbody>
       </table>
     </div>
