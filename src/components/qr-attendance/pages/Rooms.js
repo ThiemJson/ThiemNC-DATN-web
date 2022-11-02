@@ -73,7 +73,7 @@ const Rooms = () => {
         </thead>
         <tbody>
           {roomsFilterd.map(({ ID, MaPH, TenPH, Diachi }, index) => (
-            <tr key={index}>
+            <tr key={index} className=" cursor-pointer ">
               <TRowHeaderStyle className="border border-gray-200">
                 {ID}
               </TRowHeaderStyle>

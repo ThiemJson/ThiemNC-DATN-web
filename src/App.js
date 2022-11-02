@@ -46,7 +46,7 @@ function App() {
           <Route path="/faculties" element={<Faculties />} />
         </Routes>
         <div className=" w-full bg-[#2b3643] fixed bottom-0 flex justify-center items-center ">
-          <h1 className=" text-white mx-auto my-1 text-base ">
+          <h1 className=" text-white mx-auto my-1 text-sm ">
             2022 © CSE-TLU All rights reserved
           </h1>
         </div>

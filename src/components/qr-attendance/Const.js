@@ -3,6 +3,7 @@ export const DOMAIN = "http://localhost:3001";
 export const API_PREFIX = "api/v1";
 export const API_PATH = `${DOMAIN}/${API_PREFIX}`;
 export const COMMON_COLOR = "#636363";
+export const COMMON_COLOR_DARK_BLUE = "#2b3643";
 
 // API Route
 export const ROUTE_ROOMS = "room";

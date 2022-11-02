@@ -69,7 +69,7 @@ const Faculties = () => {
           {facultiesFiltered
             .slice(0, 10)
             .map(({ ID, MaKhoa, TenKhoa }, index) => (
-              <tr key={index}>
+              <tr key={index} className=" cursor-pointer ">
                 <TRowHeaderStyle className="border border-gray-200">
                   {ID}
                 </TRowHeaderStyle>

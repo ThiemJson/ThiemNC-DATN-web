@@ -2,6 +2,7 @@ import React from "react";
 import { useEffect } from "react";
 import { useState } from "react";
 import styled from "styled-components";
+import { AddItem } from "../components/AddItem";
 import { FilterBox } from "../components/FilterBox";
 import { getSubjects } from "../services/SubjectService";
 
@@ -41,7 +42,10 @@ const Subjects = () => {
     <div className="w-[80%] m-10 bg-white rounded-lg shadow-xl mx-auto p-8 flex flex-col ">
       {/* Label */}
       <div className="flex flex-col gap-3 w-full">
-        <p className="text-sm font-bold w-full">Chương trình đào tạo</p>
+        <div className="w-full flex justify-between ">
+          <p className="text-sm font-bold w-full">Chương trình đào tạo</p>
+          <AddItem></AddItem>
+        </div>
         <div className="w-full flex justify-between ">
           <select
             name=""
@@ -86,7 +90,7 @@ const Subjects = () => {
         <tbody>
           {subjectsFiltered.map(
             ({ ID, Hocky, MaMH, Sotinchi, TenMonhoc }, index) => (
-              <tr key={index}>
+              <tr key={index} className=" cursor-pointer ">
                 <TRowHeaderStyle className="border border-gray-200">
                   {ID}
                 </TRowHeaderStyle>
