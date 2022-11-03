@@ -44,7 +44,14 @@ const Subjects = () => {
       <div className="flex flex-col gap-3 w-full">
         <div className="w-full flex justify-between ">
           <p className="text-sm font-bold w-full">Chương trình đào tạo</p>
-          <AddItem></AddItem>
+          <AddItem
+            addItemClicked={(e) => {
+              console.log("addItemClicked");
+            }}
+            addCSVClicked={(e) => {
+              console.log("addCSVClicked");
+            }}
+          ></AddItem>
         </div>
         <div className="w-full flex justify-between ">
           <select

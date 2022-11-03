@@ -6,6 +6,7 @@ import { useState } from "react";
 import { useEffect } from "react";
 import { getSubjects } from "../services/SubjectService";
 import { getClass } from "../services/ClassesService";
+import { AddItem } from "../components/AddItem";
 
 const BodyTitle = styled.h1`
   font-weight: bold;
@@ -52,33 +53,45 @@ const Classes = () => {
   return (
     <div className="w-[80%] m-10 bg-white rounded-lg shadow-xl mx-auto p-8 flex flex-col ">
       {/* Select */}
-      <div className=" w-full flex justify-center items-center mb-3 gap-4 ">
-        <select className=" px-3 py-2 w-full max-w-[300px] border text-base font-bold rounded-[inherit] bg-gray-100 ">
-          <option value="">2020-2021</option>
-          <option value="">2021-2022</option>
-          <option value="">2018-2019</option>
-        </select>
+      <div className=" w-full flex justify-between items-start mb-3 gap-4 ">
+        <div className=" flex gap-3">
+          <select className=" px-3 py-2 border text-base font-bold rounded-[inherit] bg-gray-100 ">
+            <option value="">2020-2021</option>
+            <option value="">2021-2022</option>
+            <option value="">2018-2019</option>
+          </select>
 
-        <select className=" px-3 py-2 w-full max-w-[300px] border text-base font-bold rounded-[inherit] bg-gray-100 ">
-          <option value="">Công nghệ thông tin</option>
-          <option value="">Hệ thống thông tin</option>
-          <option value="">Kĩ thuật phần mềm</option>
-          <option value="">An ninh mạng</option>
-        </select>
+          <select className=" px-3 py-2 border text-base font-bold rounded-[inherit] bg-gray-100 ">
+            <option value="">Công nghệ thông tin</option>
+            <option value="">Hệ thống thông tin</option>
+            <option value="">Kĩ thuật phần mềm</option>
+            <option value="">An ninh mạng</option>
+          </select>
 
-        <select className=" px-3 py-2 w-full max-w-[300px] border text-base font-bold rounded-[inherit] bg-gray-100 ">
-          <option value="">K58</option>
-          <option value="">K59</option>
-          <option value="">K60</option>
-          <option value="">K61</option>
-          <option value="">K62</option>
-        </select>
+          <select className=" px-3 py-2 border text-base font-bold rounded-[inherit] bg-gray-100 ">
+            <option value="">K58</option>
+            <option value="">K59</option>
+            <option value="">K60</option>
+            <option value="">K61</option>
+            <option value="">K62</option>
+          </select>
 
-        <select className=" px-3 py-2 w-full max-w-[300px] border text-base font-bold rounded-[inherit] bg-gray-100 ">
-          <option value="">Học kỳ chính</option>
-          <option value="">Học kỳ phụ</option>
-          <option value="">Chuẩn đầu ra Tiếng anh</option>
-        </select>
+          <select className=" px-3 py-2 border text-base font-bold rounded-[inherit] bg-gray-100 ">
+            <option value="">Học kỳ chính</option>
+            <option value="">Học kỳ phụ</option>
+            <option value="">Chuẩn đầu ra Tiếng anh</option>
+          </select>
+        </div>
+
+        <AddItem
+          className="w-full"
+          addItemClicked={(e) => {
+            console.log("addItemClicked");
+          }}
+          addCSVClicked={(e) => {
+            console.log("addCSVClicked");
+          }}
+        ></AddItem>
       </div>
 
       {/* Content */}

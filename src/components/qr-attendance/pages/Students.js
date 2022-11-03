@@ -6,6 +6,7 @@ import MD5 from "crypto-js/md5";
 import { FilterBox } from "../components/FilterBox";
 import { StudentPortal } from "../components/portal/StudentPortal";
 import { Fragment } from "react";
+import { AddItem } from "../components/AddItem";
 
 const THeadHeaderStyle = styled.th`
   padding: 8px;
@@ -88,7 +89,17 @@ const Students = () => {
         <div className="w-[80%] mb-10 bg-white rounded-lg shadow-xl mx-auto p-8 flex flex-col ">
           {/* Label */}
           <div className="flex flex-col gap-3 w-full">
-            <p className="text-sm font-bold w-full">Danh sách sinh viên</p>
+            <div className=" flex justify-between ">
+              <p className="text-sm font-bold w-full">Danh sách sinh viên</p>
+              <AddItem
+                addItemClicked={(e) => {
+                  console.log("addItemClicked");
+                }}
+                addCSVClicked={(e) => {
+                  console.log("addCSVClicked");
+                }}
+              ></AddItem>
+            </div>
             <div className="w-full flex justify-between ">
               <select
                 name=""
