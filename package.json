@@ -3,6 +3,8 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@grapecity/spread-excelio": "^15.2.4",
+    "@grapecity/spread-sheets": "^15.2.4",
     "@hookform/resolvers": "^2.9.7",
     "@testing-library/jest-dom": "^5.16.4",
     "@testing-library/react": "^13.3.0",
@@ -10,6 +12,7 @@
     "axios": "^0.27.2",
     "crypto-js": "^4.1.1",
     "formik": "^2.2.9",
+    "jquery": "^3.6.1",
     "lodash": "^4.17.21",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",

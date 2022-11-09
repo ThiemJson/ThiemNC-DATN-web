@@ -43,6 +43,7 @@ const Students = () => {
   const [students, setStudent] = useState([]);
   const [studentsFiltered, setStudentsFiltered] = useState([]);
   const [addItemPortalShow, setAddItemPortalShow] = useState(false);
+  const [isCSVMode, setisCSVMode] = useState(false);
 
   const validator = ({ MaGV, Hoten }, text) => {
     const inputString = `${MaGV}${Hoten}`.toLowerCase();
@@ -60,17 +61,12 @@ const Students = () => {
 
   return (
     <Fragment>
-      <AddItemPortal
+      <StudentPortal
         title={`Thêm sinh viên`}
         isOpen={addItemPortalShow}
+        isCSVMode={isCSVMode}
         handleClose={setAddItemPortalShow}
-        fields={[
-          ["text", "Mã sinh viên", "", "1851061743"],
-          ["text", "Họ và tên", "", "Nguyễn Văn A"],
-          ["text", "Ngày sinh", "", "01/01/2000"],
-          ["radio", "Giới tính", ["Nam", "Nữ"], ""],
-        ]}
-      ></AddItemPortal>
+      ></StudentPortal>
       <div className="flex flex-col gap-5 mt-5">
         {/* <div className="w-[80%] mt-5 bg-white rounded-lg shadow-xl mx-auto p-4 flex justify-center items-center ">
         <div className=" w-[50%] h-full flex justify-center items-center ">
@@ -106,9 +102,11 @@ const Students = () => {
               <AddItem
                 addItemClicked={(e) => {
                   setAddItemPortalShow(true);
+                  setisCSVMode(false);
                 }}
                 addCSVClicked={(e) => {
-                  console.log("addCSVClicked");
+                  setisCSVMode(true);
+                  setAddItemPortalShow(true);
                 }}
               ></AddItem>
             </div>
