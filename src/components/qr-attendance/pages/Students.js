@@ -7,6 +7,7 @@ import { FilterBox } from "../components/FilterBox";
 import { StudentPortal } from "../components/portal/StudentPortal";
 import { Fragment } from "react";
 import { AddItem } from "../components/AddItem";
+import { AddItemPortal } from "../components/portal/AddItemPortal";
 
 const THeadHeaderStyle = styled.th`
   padding: 8px;
@@ -41,6 +42,7 @@ const ContentSpanTextStyle = styled.span`
 const Students = () => {
   const [students, setStudent] = useState([]);
   const [studentsFiltered, setStudentsFiltered] = useState([]);
+  const [addItemPortalShow, setAddItemPortalShow] = useState(false);
 
   const validator = ({ MaGV, Hoten }, text) => {
     const inputString = `${MaGV}${Hoten}`.toLowerCase();
@@ -58,7 +60,17 @@ const Students = () => {
 
   return (
     <Fragment>
-      {/* <StudentPortal /> */}
+      <AddItemPortal
+        title={`Thêm sinh viên`}
+        isOpen={addItemPortalShow}
+        handleClose={setAddItemPortalShow}
+        fields={[
+          ["text", "Mã sinh viên", "", "1851061743"],
+          ["text", "Họ và tên", "", "Nguyễn Văn A"],
+          ["text", "Ngày sinh", "", "01/01/2000"],
+          ["radio", "Giới tính", ["Nam", "Nữ"], ""],
+        ]}
+      ></AddItemPortal>
       <div className="flex flex-col gap-5 mt-5">
         {/* <div className="w-[80%] mt-5 bg-white rounded-lg shadow-xl mx-auto p-4 flex justify-center items-center ">
         <div className=" w-[50%] h-full flex justify-center items-center ">
@@ -93,7 +105,7 @@ const Students = () => {
               <p className="text-sm font-bold w-full">Danh sách sinh viên</p>
               <AddItem
                 addItemClicked={(e) => {
-                  console.log("addItemClicked");
+                  setAddItemPortalShow(true);
                 }}
                 addCSVClicked={(e) => {
                   console.log("addCSVClicked");
