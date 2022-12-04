@@ -61,12 +61,14 @@ const Students = () => {
 
   return (
     <Fragment>
-      <StudentPortal
-        title={`Thêm sinh viên`}
-        isOpen={addItemPortalShow}
-        isCSVMode={isCSVMode}
-        handleClose={setAddItemPortalShow}
-      ></StudentPortal>
+      {addItemPortalShow && (
+        <StudentPortal
+          title={`Thêm sinh viên`}
+          isOpen={addItemPortalShow}
+          isCSVMode={isCSVMode}
+          handleClose={setAddItemPortalShow}
+        ></StudentPortal>
+      )}
       <div className="flex flex-col gap-5 mt-5">
         {/* <div className="w-[80%] mt-5 bg-white rounded-lg shadow-xl mx-auto p-4 flex justify-center items-center ">
         <div className=" w-[50%] h-full flex justify-center items-center ">

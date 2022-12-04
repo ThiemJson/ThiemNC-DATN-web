@@ -25,7 +25,7 @@ const TRowHeaderStyle = styled.th`
   color: black;
 `;
 
-export const StudentPortal = ({ title, isOpen, handleClose, isCSVMode }) => {
+export const LecturePortal = ({ title, isOpen, handleClose, isCSVMode }) => {
   const [data, setData] = useState([]); // It state will contain the error when // correct file extension is not used
   const [error, setError] = useState(""); // It will store the file uploaded by the user
   const [file, setFile] = useState("");
@@ -108,7 +108,7 @@ export const StudentPortal = ({ title, isOpen, handleClose, isCSVMode }) => {
                 download
                 className="text=sm text-blue-500 italic "
               >
-                Danh sách sinh viên mẫu.csv
+                Danh sách giảng viên mẫu.csv
               </a>
             </div>
           </div>
@@ -122,7 +122,7 @@ export const StudentPortal = ({ title, isOpen, handleClose, isCSVMode }) => {
                   STT
                 </THeadHeaderStyle>
                 <THeadHeaderStyle className="border border-gray-200">
-                  Mã sinh viên
+                  Mã giảng viên
                 </THeadHeaderStyle>
                 <THeadHeaderStyle className="border border-gray-200">
                   Họ và tên
@@ -171,7 +171,7 @@ export const StudentPortal = ({ title, isOpen, handleClose, isCSVMode }) => {
             {/* MSV */}
             <div className=" flex w-full p-2">
               <span className=" w-[50%] h-4 p-1 font-semibold ">
-                Mã sinh viên
+                Mã giảng viên
               </span>
               <input
                 type="text"
