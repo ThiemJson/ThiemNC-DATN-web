@@ -12,3 +12,14 @@ export const ROUTE_FACULTY = "faculty";
 export const ROUTE_STUDENT = "students";
 export const ROUTE_LECTURE = "lecture";
 export const ROUTE_CLASSES = "class";
+
+export const DOWNLOAD_FILE = (url, fileName) =>
+  fetch("")
+    .then((response) => response.blob())
+    .then((blob) => {
+      let url = window.URL.createObjectURL(blob);
+      let a = document.createElement("a");
+      a.href = url;
+      a.download = fileName;
+      a.click();
+    });

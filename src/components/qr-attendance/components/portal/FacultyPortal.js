@@ -4,6 +4,7 @@ import { COMMON_COLOR_DARK_BLUE } from "../../Const";
 import styled from "styled-components";
 import Papa from "papaparse";
 import { useState, useEffect } from "react";
+import { CSVLink } from "react-csv";
 
 const allowedExtensions = ["csv"];
 
@@ -104,7 +105,7 @@ export const FacultyPortal = ({ title, isOpen, handleClose, isCSVMode }) => {
             <div className=" flex gap-2 ">
               <span>File mẫu</span>
               <a
-                href="../../csv/student.csv"
+                href="/csv/danhsachnganhhocmau.csv"
                 download
                 className="text=sm text-blue-500 italic "
               >

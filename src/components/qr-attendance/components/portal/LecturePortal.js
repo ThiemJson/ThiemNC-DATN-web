@@ -104,7 +104,7 @@ export const LecturePortal = ({ title, isOpen, handleClose, isCSVMode }) => {
             <div className=" flex gap-2 ">
               <span>File mẫu</span>
               <a
-                href="../../csv/student.csv"
+                href="../../csv/danhsachgiangvienmau.csv"
                 download
                 className="text=sm text-blue-500 italic "
               >
@@ -146,7 +146,7 @@ export const LecturePortal = ({ title, isOpen, handleClose, isCSVMode }) => {
                       {index}
                     </TRowHeaderStyle>
                     <TRowHeaderStyle className="border border-gray-200">
-                      {item["masinhvien"]}
+                      {item["magiangvien"]}
                     </TRowHeaderStyle>
                     <TRowHeaderStyle className="border border-gray-200 text-left">
                       {item["hovaten"]}

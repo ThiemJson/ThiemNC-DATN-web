@@ -1,0 +1,101 @@
+﻿stt,mahocphan,tenhocphan,sotinchi,hocky
+1,ENGR111,Tin học đại cương,3,1
+2,ITL112,Pháp luật đại cương,2,1
+3,ENGL111,Tiếng Anh 1,2,1
+4,COPS111,Kỹ năng giao tiếp và thuyết trình,3,1
+5,MATH111,Giải tích hàm một biến,3,1
+6,IDEO111,Nguyên lý cơ bản của chủ nghĩa Mác-Lênin 1,2,2
+7,ENGL122,Tiếng Anh 2,3,2
+8,MATH122,Giải tích hàm nhiều biến,3,2
+9,MATH233,Đại số tuyến tính,3,2
+10,IDEO112,Nguyên lý cơ bản của chủ nghĩa Mác-Lênin 3,3,2
+11,CSE203,Toán rời rạc,3,2
+12,CSE370,Kiến trúc máy tính,4,3
+13,CSE280,Ngôn ngữ lập trình,4,3
+14,ENGL233,Tiếng Anh 3,3,3
+15,PHYS121,Vật lý đại cương,3,3
+16,MATH254,Xác suất thống kê,3,3
+17,IDEO243,Tư tưởng Hồ Chí Minh,2,3
+18,CSE281,Cấu trúc dữ liệu và giải thuật,3,4
+19,CSE381,Lập trình nâng cao,3,4
+20,CSE484,Cơ sở dữ liệu,4,4
+21,CSE290,Tiếng Anh chuyên ngành công nghệ thông tin,3,4
+22,IDEO234,Đường lối cách mạng của ĐCSVN,3,4
+23,CSE489,Mạng máy tính,3,5
+24,CSE486,Hệ quản trị cơ sở dữ liệu,3,5
+25,CSE480,Phân tích thiết kế hệ thống thông tin,3,5
+26,CSE492,Trí tuệ nhân tạo,3,6
+27,CSE482,Hệ điều hành,3,6
+28,CSE481,Công nghệ phần mềm,3,6
+29,CSE487,Đồ hoạ máy tính,3,6
+30,CSE445,Học máy,3,7
+31,CSE488,An toàn và bảo mật thông tin,3,7
+32,CSE395,Chuyên đề 1,1,7
+33,CSE409,Chuyên đề 2,2,8
+34,CSE465,Thực tập tốt nghiệp công nghệ thông tin,2,8
+35,CSE101,Nhập môn công nghệ thông tin,2,2
+36,CSE103,Nhập môn tư duy tính toán,2,2
+37,CSE284,Lập trình Java,3,4
+38,CSE282,Nhập môn lập trình khoa học dữ liệu,3,4
+39,CSE451,Phân tích và xử lý tín hiệu số,3,4
+40,CSE371,Phương pháp số,3,5
+41,CSE376,Lý thuyết tính toán,3,5
+42,CSE460,Tương tác người máy,3,5
+43,CSE393,Nhập môn điện toán đám mây,3,5
+44,CSE390,Thống kê ứng dụng,3,5
+45,CSE485,Công nghệ Web,3,5
+46,CSE441,Phát triển ứng dụng cho các thiết bị di động,3,6
+47,CSE461,Phân tích yêu cầu phần mềm,3,6
+48,CSE301,Linux và phần mềm mã nguồn mở,3,6
+49,CSE415,Lập trình đồ học 3D,3,7
+50,CSE407,Các vấn đề tiên tiến trong thiết kết phần mềm,3,7
+51,CSE423,Lập trình phân tán,3,7
+52,CSE425,Hệ thống thông tin địa lý,3,7
+53,CSE405,Quản trị hệ thống thông tin,3,7
+54,CSE584,Cơ sở dữ liệu nâng cao,3,7
+55,CSE426,Thuật toán ứng dụng,3,7
+56,CSE420,Thiết kế mạng,3,7
+57,CSE404,Khai phá dữ liệu,3,8
+58,CSE456,Xử lý ảnh,3,8
+59,CSE411,Phát triển dự án phần mềm,3,8
+60,CSE547,Thương mại điện tử,3,8
+61,CSE418,Truy hồi thông tin và tìm kiếm web,3,8
+62,CSE419,Mạng không dây và di động,3,8
+63,CSE421,Quản trị mạng,3,8
+64,CSE406,Phân tích dữ liệu lớn,3,8
+65,CSE427,Mạng no ron và ứng dụng,3,8
+66,CSE494,Thiết kế và phát triển game,3,8
+67,CSE483,Chương trình dịch,3,8
+68,1851060067,Đỗ Khôi Anh,2000-06-27T17:00:00.000Z,Nam
+69,1851060068,Đặng Thái Hải,2000-08-28T17:00:00.000Z,Nữ
+70,1851060069,Phùng Sơn Quân,2000-03-12T17:00:00.000Z,Nam
+71,1851060070,Lương Nghĩa Tín,2000-05-02T17:00:00.000Z,Nữ
+72,1851060071,Văn Duy Trí,2000-08-29T17:00:00.000Z,Nữ
+73,1851060072,Vương Thịnh Minh,2000-05-05T17:00:00.000Z,Nữ
+74,1851060073,Phùng Trường Thiện,1999-12-31T17:00:00.000Z,Nam
+75,1851060074,Hồ Kiên Quang,2000-12-18T17:00:00.000Z,Nam
+76,1851060075,Phan Tín Quang,2000-02-07T17:00:00.000Z,Nữ
+77,1851060076,Lương Quân Sang,2000-11-28T17:00:00.000Z,Nữ
+78,1851060077,Đinh Trí Hải,2000-02-27T17:00:00.000Z,Nữ
+79,1851060078,Lý Dũng Tín,2000-05-12T17:00:00.000Z,Nam
+80,1851060079,Lý Danh Lộc,2000-09-06T17:00:00.000Z,Nữ
+81,1851060080,Bùi Sơn Nam,2000-06-11T17:00:00.000Z,Nữ
+82,1851060081,Hồ Trung Thắng,2000-04-23T17:00:00.000Z,Nam
+83,1851060082,Ngô Long Phú,2000-02-24T17:00:00.000Z,Nữ
+84,1851060083,Hoàng Phúc Tú,2000-02-23T17:00:00.000Z,Nam
+85,1851060084,Tăng Khánh Đăng,2000-05-22T17:00:00.000Z,Nam
+86,1851060085,Hứa Trung Quân,2000-05-26T17:00:00.000Z,Nam
+87,1851060086,Thạch Khánh Tú,2000-11-19T17:00:00.000Z,Nam
+88,1851060087,Trịnh Thái Nhật,2000-06-25T17:00:00.000Z,Nam
+89,1851060088,Đào Thiện Kiên,2000-02-26T17:00:00.000Z,Nữ
+90,1851060089,Vương Bảo Khoa,2000-11-25T17:00:00.000Z,Nữ
+91,1851060090,Phùng Hậu Anh,2000-09-06T17:00:00.000Z,Nữ
+92,1851060091,Vương Trường Lộc,2000-06-10T17:00:00.000Z,Nam
+93,1851060092,Tô Lâm Kiệt,2000-06-19T17:00:00.000Z,Nữ
+94,1851060093,Dương Thành Đạt,2000-12-03T17:00:00.000Z,Nữ
+95,1851060094,Đỗ Thiện Nhật,2000-09-27T17:00:00.000Z,Nữ
+96,1851060095,Lương Thiên Thái,2000-05-01T17:00:00.000Z,Nam
+97,1851060096,Hoàng Quang Quân,2000-05-26T17:00:00.000Z,Nam
+98,1851060097,Thái Hưng Toàn,2000-11-15T17:00:00.000Z,Nữ
+99,1851060098,Quách Thiên Khôi,2000-02-22T17:00:00.000Z,Nam
+100,1851060099,Hồ Kiệt Khải,2000-12-26T17:00:00.000Z,Nữ
