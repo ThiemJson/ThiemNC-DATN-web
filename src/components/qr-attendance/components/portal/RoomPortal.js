@@ -25,7 +25,7 @@ const TRowHeaderStyle = styled.th`
   color: black;
 `;
 
-export const StudentPortal = ({ title, isOpen, handleClose, isCSVMode }) => {
+export const RoomPortal = ({ title, isOpen, handleClose, isCSVMode }) => {
   const [data, setData] = useState([]); // It state will contain the error when // correct file extension is not used
   const [error, setError] = useState(""); // It will store the file uploaded by the user
   const [file, setFile] = useState("");
@@ -104,11 +104,11 @@ export const StudentPortal = ({ title, isOpen, handleClose, isCSVMode }) => {
             <div className=" flex gap-2 ">
               <span>File mẫu</span>
               <a
-                href="../../csv/danhsachsinhvienmau.csv"
+                href="../../csv/danhsachphonghocmau.csv"
                 download
                 className="text=sm text-blue-500 italic "
               >
-                Danh sách sinh viên mẫu.csv
+                Danh sách phòng học mẫu.csv
               </a>
             </div>
           </div>
@@ -122,19 +122,13 @@ export const StudentPortal = ({ title, isOpen, handleClose, isCSVMode }) => {
                   STT
                 </THeadHeaderStyle>
                 <THeadHeaderStyle className="border border-gray-200">
-                  Mã sinh viên
+                  Mã phòng
                 </THeadHeaderStyle>
                 <THeadHeaderStyle className="border border-gray-200">
-                  Họ và tên
+                  Tên phòng
                 </THeadHeaderStyle>
                 <THeadHeaderStyle className="border border-gray-200">
-                  Ngày sinh
-                </THeadHeaderStyle>
-                <THeadHeaderStyle className="border border-gray-200">
-                  Giới tính
-                </THeadHeaderStyle>
-                <THeadHeaderStyle className="border border-gray-200">
-                  Mật khẩu tài khoản
+                  Địa chỉ
                 </THeadHeaderStyle>
               </tr>
             </thead>
@@ -146,19 +140,13 @@ export const StudentPortal = ({ title, isOpen, handleClose, isCSVMode }) => {
                       {index}
                     </TRowHeaderStyle>
                     <TRowHeaderStyle className="border border-gray-200">
-                      {item["masinhvien"]}
+                      {item["maphong"]}
                     </TRowHeaderStyle>
                     <TRowHeaderStyle className="border border-gray-200 text-left">
-                      {item["hovaten"]}
+                      {item["tenphong"]}
                     </TRowHeaderStyle>
                     <TRowHeaderStyle className="border border-gray-200 text-left">
-                      {item["ngaysinh"]}
-                    </TRowHeaderStyle>
-                    <TRowHeaderStyle className="border border-gray-200">
-                      {item["gioitinh"]}
-                    </TRowHeaderStyle>
-                    <TRowHeaderStyle className="border border-gray-200">
-                      {item["matkhau"]}
+                      {item["diachi"]}
                     </TRowHeaderStyle>
                   </tr>
                 );
@@ -170,9 +158,7 @@ export const StudentPortal = ({ title, isOpen, handleClose, isCSVMode }) => {
           <div className=" flex flex-col justify-center items-center ">
             {/* MSV */}
             <div className=" flex w-full p-2">
-              <span className=" w-[50%] h-4 p-1 font-semibold ">
-                Mã sinh viên
-              </span>
+              <span className=" w-[50%] h-4 p-1 font-semibold ">Mã phòng</span>
               <input
                 type="text"
                 className="w-[50%] border border-gray-200 p-1 rounded-lg px-3 py-1"
@@ -183,7 +169,7 @@ export const StudentPortal = ({ title, isOpen, handleClose, isCSVMode }) => {
 
             {/* Họ và tên */}
             <div className=" flex w-full p-2">
-              <span className=" w-[50%] h-4 p-1 font-semibold ">Họ và tên</span>
+              <span className=" w-[50%] h-4 p-1 font-semibold ">Tên phòng</span>
               <input
                 type="text"
                 className="w-[50%] border border-gray-200 p-1 rounded-lg px-3 py-1"
@@ -194,28 +180,15 @@ export const StudentPortal = ({ title, isOpen, handleClose, isCSVMode }) => {
 
             {/* NS */}
             <div className=" flex w-full p-2">
-              <span className=" w-[50%] h-4 p-1 font-semibold ">Ngày sinh</span>
+              <span className=" w-[50%] h-4 p-1 font-semibold ">
+                Địa chỉ phòng
+              </span>
               <input
                 type="date"
                 className="w-[50%] border border-gray-200 p-1 rounded-lg px-3 py-1"
                 defaultValue={""}
                 placeholder={""}
               />
-            </div>
-
-            {/* Giới tính */}
-            <div className=" flex w-full p-2 ">
-              <span className=" w-[50%] h-4 p-1 font-semibold ">Giới tính</span>
-              <div className=" w-[50%] h-4 flex gap-4">
-                <div className="flex gap-1">
-                  <label htmlFor="nam">Nam</label>
-                  <input type="radio" name="gender" id="nam" />
-                </div>
-                <div className="flex gap-1">
-                  <label htmlFor="nu">Nữ</label>
-                  <input type="radio" name="gender" id="nu" />
-                </div>
-              </div>
             </div>
           </div>
         )}
