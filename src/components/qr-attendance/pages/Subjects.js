@@ -40,7 +40,9 @@ const Subjects = () => {
         setSubject(result.data);
         setSubjectsFiltered(result.data);
       })
-      .catch((error) => {});
+      .catch((error) => {
+        console.log(error);
+      });
   }, []);
 
   return (

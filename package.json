@@ -2,6 +2,10 @@
   "name": "my-app",
   "version": "0.1.0",
   "private": true,
+  "engines": {
+    "node": "^18.10.0",
+    "npm": "^8.1.0"
+  },
   "dependencies": {
     "@grapecity/spread-excelio": "^15.2.4",
     "@grapecity/spread-sheets": "^15.2.4",

@@ -1,5 +1,5 @@
 // Domain
-export const DOMAIN = "http://localhost:3001";
+export const DOMAIN = "https://thiemnc-datn-server.herokuapp.com";
 export const API_PREFIX = "api/v1";
 export const API_PATH = `${DOMAIN}/${API_PREFIX}`;
 export const COMMON_COLOR = "#636363";
